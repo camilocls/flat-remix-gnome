@@ -8,7 +8,7 @@ mkdir -p "$TMP"
 # Build CSS files
 for scss in sass/*.scss
 do
-  scss --sourcemap=none -C -q "$scss" "$TMP"/"$(basename ${scss%%.scss})".css
+  sass --no-source-map -c -q "$scss" "$TMP"/"$(basename ${scss%%.scss})".css
 done
 
 for css in "$TMP"/Flat-Remix*.css
